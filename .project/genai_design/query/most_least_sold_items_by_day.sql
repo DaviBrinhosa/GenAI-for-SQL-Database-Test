@@ -1,0 +1,1 @@
+SELECT product_id, SUM(quantity) AS total_sold, DATE(oi.created_at) AS sale_date FROM order_items oi JOIN orders o ON oi.order_id = o.id GROUP BY product_id, sale_date ORDER BY total_sold DESC;

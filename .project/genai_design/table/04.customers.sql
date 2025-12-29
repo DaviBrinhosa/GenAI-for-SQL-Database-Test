@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS customers (id long PRIMARY KEY NOT NULL, is_member boolean, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);

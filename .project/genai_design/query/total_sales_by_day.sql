@@ -1,0 +1,1 @@
+SELECT DATE(created_at) AS sale_date, SUM(total_price) AS total_sales FROM orders GROUP BY sale_date;

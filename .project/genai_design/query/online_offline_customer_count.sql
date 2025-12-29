@@ -1,0 +1,1 @@
+SELECT order_type, COUNT(DISTINCT o.customer_id) AS customer_count FROM orders o GROUP BY order_type;

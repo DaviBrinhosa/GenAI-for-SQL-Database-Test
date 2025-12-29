@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS order_items (id long PRIMARY KEY NOT NULL, order_id long NOT NULL, product_id long NOT NULL, quantity int NOT NULL, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text, FOREIGN KEY (order_id) REFERENCES orders(id), FOREIGN KEY (product_id) REFERENCES products(id));

@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS member_count FROM customers WHERE is_member = true;

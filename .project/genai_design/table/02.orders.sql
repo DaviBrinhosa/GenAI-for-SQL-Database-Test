@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS orders (id long PRIMARY KEY NOT NULL, customer_id long, order_type text NOT NULL, total_price decimal(10, 2) NOT NULL, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);

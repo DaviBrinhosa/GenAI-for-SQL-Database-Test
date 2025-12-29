@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS products (id long PRIMARY KEY NOT NULL, name text NOT NULL, price decimal(10, 2) NOT NULL, discount decimal(5, 2), created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);
