@@ -1,4 +1,0 @@
-Database is DuckDB.
-The primary key (if any) must be a long data type.
-Each table must have created_at and updated_at as timestamps with timezone.
-Each table must have created_by and updated_by as text.

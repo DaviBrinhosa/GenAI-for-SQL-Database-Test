@@ -1,8 +1,0 @@
-Example products to sell are: 
- - fried chicken, price vary. The item can have a discount at particular times. 
- - Orange juice, the price is 10 USD. 
- - Fish & chips, the price is 25 USD. 
- 
-There is a packaging fee for take-away orders, priced at 2 USD.
-There is a delivery fee, and the price varies.
-There is a 12.5% additional tax for each purchase.

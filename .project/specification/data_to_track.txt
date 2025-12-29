@@ -1,4 +1,0 @@
-Total sales within a day.
-What items are sold most and least each day?
-How many customers buy online, and how many offline.
-How many members do we have?

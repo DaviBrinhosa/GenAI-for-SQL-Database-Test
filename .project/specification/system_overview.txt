@@ -1,2 +1,0 @@
-An online application store that sells food and beverages. 
-The store location is offline and online.
