@@ -1,0 +1,306 @@
+{
+  "table_designs":[
+    {
+      "name":"01.products",
+      "columns":[
+        {
+          "column_name":"id",
+          "data_type":"long",
+          "constraints":[
+            "primary key",
+            "not null"
+          ],
+          "sample_data":1,
+          "description":"Unique identifier for each product"
+        },
+        {
+          "column_name":"name",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"fried chicken",
+          "description":"Name of the product"
+        },
+        {
+          "column_name":"price",
+          "data_type":"decimal(10, 2)",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":25.00,
+          "description":"Price of the product"
+        },
+        {
+          "column_name":"discount",
+          "data_type":"decimal(5, 2)",
+          "constraints":null,
+          "sample_data":5.00,
+          "description":"Discount amount on the product, if applicable"
+        },
+        {
+          "column_name":"created_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the product was created"
+        },
+        {
+          "column_name":"updated_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the product was last updated"
+        },
+        {
+          "column_name":"created_by",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"admin",
+          "description":"Identifier of who created the product"
+        },
+        {
+          "column_name":"updated_by",
+          "data_type":"text",
+          "constraints":null,
+          "sample_data":"admin",
+          "description":"Identifier of who last updated the product"
+        }
+      ],
+      "sql":"CREATE TABLE IF NOT EXISTS products (id long PRIMARY KEY NOT NULL, name text NOT NULL, price decimal(10, 2) NOT NULL, discount decimal(5, 2), created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);"
+    },
+    {
+      "name":"02.orders",
+      "columns":[
+        {
+          "column_name":"id",
+          "data_type":"long",
+          "constraints":[
+            "primary key",
+            "not null"
+          ],
+          "sample_data":101,
+          "description":"Unique identifier for each order"
+        },
+        {
+          "column_name":"customer_id",
+          "data_type":"long",
+          "constraints":null,
+          "sample_data":1,
+          "description":"Identifier of the customer who made the order"
+        },
+        {
+          "column_name":"order_type",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"online",
+          "description":"Type of order, can be 'online' or 'offline'"
+        },
+        {
+          "column_name":"total_price",
+          "data_type":"decimal(10, 2)",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":32.25,
+          "description":"Total price of the order including tax and delivery fee"
+        },
+        {
+          "column_name":"created_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the order was created"
+        },
+        {
+          "column_name":"updated_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the order was last updated"
+        },
+        {
+          "column_name":"created_by",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"admin",
+          "description":"Identifier of who created the order"
+        },
+        {
+          "column_name":"updated_by",
+          "data_type":"text",
+          "constraints":null,
+          "sample_data":"admin",
+          "description":"Identifier of who last updated the order"
+        }
+      ],
+      "sql":"CREATE TABLE IF NOT EXISTS orders (id long PRIMARY KEY NOT NULL, customer_id long, order_type text NOT NULL, total_price decimal(10, 2) NOT NULL, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);"
+    },
+    {
+      "name":"03.order_items",
+      "columns":[
+        {
+          "column_name":"id",
+          "data_type":"long",
+          "constraints":[
+            "primary key",
+            "not null"
+          ],
+          "sample_data":1001,
+          "description":"Unique identifier for each order item"
+        },
+        {
+          "column_name":"order_id",
+          "data_type":"long",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":101,
+          "description":"Identifier of the related order"
+        },
+        {
+          "column_name":"product_id",
+          "data_type":"long",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":1,
+          "description":"Identifier of the related product"
+        },
+        {
+          "column_name":"quantity",
+          "data_type":"int",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":2,
+          "description":"Quantity of the product ordered"
+        },
+        {
+          "column_name":"created_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the order item was created"
+        },
+        {
+          "column_name":"updated_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the order item was last updated"
+        },
+        {
+          "column_name":"created_by",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"admin",
+          "description":"Identifier of who created the order item"
+        },
+        {
+          "column_name":"updated_by",
+          "data_type":"text",
+          "constraints":null,
+          "sample_data":"admin",
+          "description":"Identifier of who last updated the order item"
+        }
+      ],
+      "sql":"CREATE TABLE IF NOT EXISTS order_items (id long PRIMARY KEY NOT NULL, order_id long NOT NULL, product_id long NOT NULL, quantity int NOT NULL, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text, FOREIGN KEY (order_id) REFERENCES orders(id), FOREIGN KEY (product_id) REFERENCES products(id));"
+    },
+    {
+      "name":"04.customers",
+      "columns":[
+        {
+          "column_name":"id",
+          "data_type":"long",
+          "constraints":[
+            "primary key",
+            "not null"
+          ],
+          "sample_data":1,
+          "description":"Unique identifier for each customer"
+        },
+        {
+          "column_name":"is_member",
+          "data_type":"boolean",
+          "constraints":null,
+          "sample_data":true,
+          "description":"Indicates if the customer is a member or not"
+        },
+        {
+          "column_name":"created_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the customer record was created"
+        },
+        {
+          "column_name":"updated_at",
+          "data_type":"timestamp with time zone",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"2023-10-01T12:00:00Z",
+          "description":"Timestamp when the customer record was last updated"
+        },
+        {
+          "column_name":"created_by",
+          "data_type":"text",
+          "constraints":[
+            "not null"
+          ],
+          "sample_data":"admin",
+          "description":"Identifier of who created the customer record"
+        },
+        {
+          "column_name":"updated_by",
+          "data_type":"text",
+          "constraints":null,
+          "sample_data":"admin",
+          "description":"Identifier of who last updated the customer record"
+        }
+      ],
+      "sql":"CREATE TABLE IF NOT EXISTS customers (id long PRIMARY KEY NOT NULL, is_member boolean, created_at timestamp with time zone NOT NULL, updated_at timestamp with time zone NOT NULL, created_by text NOT NULL, updated_by text);"
+    }
+  ],
+  "query_designs":[
+    {
+      "name":"total_sales_by_day",
+      "sql":"SELECT DATE(created_at) AS sale_date, SUM(total_price) AS total_sales FROM orders GROUP BY sale_date;"
+    },
+    {
+      "name":"most_least_sold_items_by_day",
+      "sql":"SELECT product_id, SUM(quantity) AS total_sold, DATE(oi.created_at) AS sale_date FROM order_items oi JOIN orders o ON oi.order_id = o.id GROUP BY product_id, sale_date ORDER BY total_sold DESC;"
+    },
+    {
+      "name":"online_offline_customer_count",
+      "sql":"SELECT order_type, COUNT(DISTINCT o.customer_id) AS customer_count FROM orders o GROUP BY order_type;"
+    },
+    {
+      "name":"count_of_members",
+      "sql":"SELECT COUNT(*) AS member_count FROM customers WHERE is_member = true;"
+    }
+  ]
+}
